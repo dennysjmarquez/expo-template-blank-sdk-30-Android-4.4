@@ -13,57 +13,7 @@ import {
 
 import BrandedNavigationTitle from 'BrandedNavigationTitle';
 
-const Color = ({value}) => {
-  if (!value) {
-    return <View />;
-  } else {
-    return (
-      <View style={styles.colorContainer}>
-        <View style={[styles.colorPreview, {backgroundColor: value}]} />
-        <View style={styles.colorTextContainer}>
-          <Text style={styles.sectionContentText}>
-            {value}
-          </Text>
-        </View>
-      </View>
-    );
-  }
-}
-
-const SectionHeader = ({title}) => {
-  return (
-    <View style={styles.sectionHeaderContainer}>
-      <Text style={styles.sectionHeaderText}>
-        {title}
-      </Text>
-    </View>
-  );
-}
-
-const SectionContent = (props) => {
-  return (
-    <View style={styles.sectionContentContainer}>
-      {props.children}
-    </View>
-  );
-}
-
-const AppIconPreview = ({iconUrl}) => {
-  if (!iconUrl) {
-    iconUrl = 'default-icon-url-here';
-  }
-
-  return (
-    <Image
-      source={{uri: iconUrl}}
-      style={{width: 64, height: 64}}
-      resizeMode="cover"
-    />
-  );
-}
-
 export default class ConfigScreen extends React.Component {
-
   static propTypes = {
     manifest: PropTypes.object.isRequired,
   }
@@ -161,6 +111,55 @@ export default class ConfigScreen extends React.Component {
       </ScrollView>
     );
   }
+}
+
+const Color = ({value}) => {
+  if (!value) {
+    return <View />;
+  } else {
+    return (
+      <View style={styles.colorContainer}>
+        <View style={[styles.colorPreview, {backgroundColor: value}]} />
+        <View style={styles.colorTextContainer}>
+          <Text style={styles.sectionContentText}>
+            {value}
+          </Text>
+        </View>
+      </View>
+    );
+  }
+}
+
+const SectionHeader = ({title}) => {
+  return (
+    <View style={styles.sectionHeaderContainer}>
+      <Text style={styles.sectionHeaderText}>
+        {title}
+      </Text>
+    </View>
+  );
+}
+
+const SectionContent = (props) => {
+  return (
+    <View style={styles.sectionContentContainer}>
+      {props.children}
+    </View>
+  );
+}
+
+const AppIconPreview = ({iconUrl}) => {
+  if (!iconUrl) {
+    iconUrl = 'default-icon-url-here';
+  }
+
+  return (
+    <Image
+      source={{uri: iconUrl}}
+      style={{width: 64, height: 64}}
+      resizeMode="cover"
+    />
+  );
 }
 
 const styles = StyleSheet.create({
