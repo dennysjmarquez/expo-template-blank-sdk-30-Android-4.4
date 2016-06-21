@@ -11,6 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
+import ResponsiveImage from '@exponent/react-native-responsive-image';
 
 import BrandedNavigationTitle from 'BrandedNavigationTitle';
 
@@ -43,7 +44,7 @@ export default class LinksScreen extends React.Component {
         <TouchableOpacity style={styles.optionsContainer} onPress={this._handlePressSlack}>
           <View style={styles.option}>
             <View style={styles.optionIconContainer}>
-              <View style={{width: 20, height: 20}} />
+              <SlackIcon />
             </View>
             <View style={styles.optionTextContainer}>
               <Text style={styles.optionText}>
@@ -56,7 +57,7 @@ export default class LinksScreen extends React.Component {
         <TouchableOpacity style={styles.optionsContainer} onPress={this._handlePressDocs}>
           <View style={styles.option}>
             <View style={styles.optionIconContainer}>
-              <View style={{width: 20, height: 20}} />
+              <ExponentIcon />
             </View>
             <View style={styles.optionTextContainer}>
               <Text style={styles.optionText}>
@@ -69,7 +70,7 @@ export default class LinksScreen extends React.Component {
         <TouchableOpacity style={styles.optionsContainer} onPress={this._handlePressShowcase}>
           <View style={styles.option}>
             <View style={styles.optionIconContainer}>
-              <View style={{width: 20, height: 20}} />
+              <ExponentIcon style={{tintColor:"#888"}} />
             </View>
             <View style={styles.optionTextContainer}>
               <Text style={styles.optionText}>
@@ -83,6 +84,29 @@ export default class LinksScreen extends React.Component {
   }
 }
 
+const SlackIcon = () => (
+  <ResponsiveImage
+    sources={{
+      2: {uri: 'https://s3.amazonaws.com/exp-us-standard/slack-icon@2x.png'},
+      3: {uri: 'https://s3.amazonaws.com/exp-us-standard/slack-icon@3x.png'},
+    }}
+    fadeDuration={0}
+    style={{width: 20, height: 20}}
+  />
+);
+
+const ExponentIcon = (props) => (
+  <ResponsiveImage
+    sources={{
+      2: {uri: 'https://s3.amazonaws.com/exp-us-standard/exponent-icon@2x.png'},
+      3: {uri: 'https://s3.amazonaws.com/exp-us-standard/exponent-icon@3x.png'},
+    }}
+    resizeMode="contain"
+    fadeDuration={0}
+    style={[{width: 20, height: 20, marginTop: 1}, props.style]}
+  />
+);
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -95,9 +119,11 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   optionsContainer: {
-    // ...
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: '#EDEDED',
+  },
+  optionIconContainer: {
+    marginRight: 9,
   },
   option: {
     flexDirection: 'row',
@@ -107,5 +133,6 @@ const styles = StyleSheet.create({
   },
   optionText: {
     fontSize: 15,
+    marginTop: 2,
   },
 });
