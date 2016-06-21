@@ -22,18 +22,6 @@ export default class LinksScreen extends React.Component {
     },
   }
 
-  _handlePressSlack = () => {
-    Linking.openURL('https://slack.exponentjs.com');
-  }
-
-  _handlePressDocs = () => {
-    Linking.openURL('http://docs.getexponent.com');
-  }
-
-  _handlePressShowcase = () => {
-    Linking.openURL('exp://exp.host/@jesse/exponent-showcase');
-  }
-
   render() {
     return (
       <ScrollView style={styles.container}>
@@ -81,6 +69,18 @@ export default class LinksScreen extends React.Component {
         </TouchableOpacity>
       </ScrollView>
     );
+  }
+
+  _handlePressSlack = () => {
+    Linking.openURL('https://slack.exponentjs.com');
+  }
+
+  _handlePressDocs = () => {
+    Linking.openURL('http://docs.getexponent.com');
+  }
+
+  _handlePressShowcase = () => {
+    Linking.openURL('exp://exp.host/@jesse/exponent-showcase');
   }
 }
 
