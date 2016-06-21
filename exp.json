@@ -1,0 +1,17 @@
+{
+  "name": "My New Project",
+  "description": "A starter template",
+  "slug": "my-new-project",
+  "sdkVersion": "UNVERSIONED",
+  "version": "1.0.0",
+  "orientation": "portrait",
+  "primaryColor": "#1073b6",
+  "iconUrl": "https://s3.amazonaws.com/exp-us-standard/ExponentEmptyManifest_192.png",
+  "loading": {
+    "iconUrl": "https://s3.amazonaws.com/exp-us-standard/ExponentEmptyManifest_192.png"
+  },
+  "notification": {
+    "iconUrl": "https://s3.amazonaws.com/exp-us-standard/placeholder-push-icon.png",
+    "color": "#000000"
+  }
+}
