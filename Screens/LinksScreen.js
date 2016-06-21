@@ -4,6 +4,7 @@
 
 import React from 'react';
 import {
+  Linking,
   StyleSheet,
   ScrollView,
   TouchableOpacity,
@@ -14,11 +15,22 @@ import {
 import BrandedNavigationTitle from 'BrandedNavigationTitle';
 
 export default class LinksScreen extends React.Component {
-
   static route = {
     navigationBar: {
       renderTitle: () => <BrandedNavigationTitle />
     },
+  }
+
+  _handlePressSlack = () => {
+    Linking.openURL('https://slack.exponentjs.com');
+  }
+
+  _handlePressDocs = () => {
+    Linking.openURL('http://docs.getexponent.com');
+  }
+
+  _handlePressShowcase = () => {
+    Linking.openURL('exp://exp.host/@jesse/exponent-showcase');
   }
 
   render() {
@@ -28,7 +40,7 @@ export default class LinksScreen extends React.Component {
           Resources
         </Text>
 
-        <TouchableOpacity style={styles.optionsContainer}>
+        <TouchableOpacity style={styles.optionsContainer} onPress={this._handlePressSlack}>
           <View style={styles.option}>
             <View style={styles.optionIconContainer}>
               <View style={{width: 20, height: 20}} />
@@ -41,7 +53,7 @@ export default class LinksScreen extends React.Component {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.optionsContainer}>
+        <TouchableOpacity style={styles.optionsContainer} onPress={this._handlePressDocs}>
           <View style={styles.option}>
             <View style={styles.optionIconContainer}>
               <View style={{width: 20, height: 20}} />
@@ -54,7 +66,7 @@ export default class LinksScreen extends React.Component {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.optionsContainer}>
+        <TouchableOpacity style={styles.optionsContainer} onPress={this._handlePressShowcase}>
           <View style={styles.option}>
             <View style={styles.optionIconContainer}>
               <View style={{width: 20, height: 20}} />

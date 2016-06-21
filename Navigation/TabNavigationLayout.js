@@ -18,11 +18,6 @@ import FontAwesomeIcon from 'FontAwesomeIcon';
 import Router from 'Router';
 
 export default class TabNavigationLayout extends React.Component {
-
-  static route = {
-    // No config needed
-  };
-
   static propTypes = {
     manifest: PropTypes.object.isRequired,
   };
