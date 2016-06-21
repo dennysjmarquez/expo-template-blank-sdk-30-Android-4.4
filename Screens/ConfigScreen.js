@@ -150,7 +150,7 @@ const SectionContent = (props) => {
 
 const AppIconPreview = ({iconUrl}) => {
   if (!iconUrl) {
-    iconUrl = 'default-icon-url-here';
+    iconUrl = 'https://s3.amazonaws.com/exp-brand-assets/ExponentEmptyManifest_192.png';
   }
 
   return (

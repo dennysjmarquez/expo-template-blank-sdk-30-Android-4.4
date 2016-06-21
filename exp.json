@@ -25,12 +25,12 @@
   primaryColor: "#cccccc",
 
   // The icon image to use on your home screen
-  iconUrl: "https://s3.amazonaws.com/exp-us-standard/ExponentEmptyManifest_192.png",
+  iconUrl: "https://s3.amazonaws.com/exp-brand-assets/ExponentEmptyManifest_192.png",
 
   // Push notification configuration: currently Android only
   notification: {
     // The image to use for the notification icon
-    iconUrl: "https://s3-us-west-1.amazonaws.com/listexp/images5/list_notification_icon_fullsize.png",
+    iconUrl: "https://s3.amazonaws.com/exp-us-standard/placeholder-push-icon.png",
 
     // The background color for the notification icon
     color: "#000000"
@@ -38,6 +38,6 @@
 
   loading: {
     // The image to display in the center of the splash screen while loading the app
-    iconUrl: "https://s3.amazonaws.com/exp-us-standard/placeholder-push-icon.png",
+    iconUrl: "https://s3.amazonaws.com/exp-brand-assets/ExponentEmptyManifest_192.png",
   }
 }
