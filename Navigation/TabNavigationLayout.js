@@ -26,7 +26,10 @@ export default class TabNavigationLayout extends React.Component {
     let { manifest } = this.props;
 
     return (
-      <TabNavigation initialTab="home">
+      <TabNavigation
+        tabBarColor={Colors.tabBar}
+        tabBarHeight={56}
+        initialTab="home">
         <TabNavigationItem
           id="home"
           renderIcon={isSelected => this._renderIcon('cog', isSelected)}>
@@ -71,6 +74,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   selectedTab: {
-    color: '#2f95dc',
+    color: Colors.tabIconSelected,
   },
 });
