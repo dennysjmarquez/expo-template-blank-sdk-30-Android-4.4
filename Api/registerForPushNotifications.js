@@ -5,39 +5,31 @@
 import { NativeModules, Platform } from 'react-native';
 const { ExponentNotifications } = NativeModules;
 
-import callApiAsync from 'callApiAsync';
+const PUSH_ENDPOINT = 'https://exponent-push-server.herokuapp.com/tokens';
 
-// Until we implement this on iOS..
+export default async function registerForPushNotificationsAsync() {
+  let token = await ExponentNotifications.getExponentPushTokenAsync();
+
+  return fetch(PUSH_ENDPOINT, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      token: {
+        value: token,
+       }
+    })
+  })
+}
+
+// Push Notifications are not currently implemented on iOS! This will be
+// available mid-July. The code below just provides a fake token for now.
 if (Platform.OS === 'ios') {
   ExponentNotifications = {
     getExponentPushTokenAsync: async () => {
       return new Promise(resolve => resolve('fake-token'));
     }
   }
-}
-
-let previousTimeout = 0;
-let times = 0;
-const maxTimes = 5;
-
-export default async function registerForPushNotificationsAsync() {
-  try {
-    let token = await ExponentNotifications.getExponentPushTokenAsync();
-    await callApiAsync('tokens', [], { 'token[value]': token }, {method: 'post'});
-
-    previousTimeout = 0;
-    times = 0;
-  } catch (e) {
-    if (times < maxTimes) {
-      const timeForDelay = previousTimeout + (500 * times++);
-      console.log(`Retrying push notification registration (${timeForDelay}, ${previousTimeout}, ${times})...`);
-      await sleep(timeForDelay)
-      previousTimeout = timeForDelay;
-      await registerForPushNotificationsAsync();
-    }
-  }
-}
-
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
 }
