@@ -2,13 +2,20 @@
  * @providesModule registerForPushNotificationsAsync
  */
 
-import { NativeModules, Platform } from 'react-native';
-const { ExponentNotifications } = NativeModules;
+import { Platform } from 'react-native';
+
+import { Notifications } from 'exponent';
 
 const PUSH_ENDPOINT = 'https://exponent-push-server.herokuapp.com/tokens';
 
 export default async function registerForPushNotificationsAsync() {
-  let token = await ExponentNotifications.getExponentPushTokenAsync();
+  // Push Notifications are not implemented on iOS yet! This will be available
+  // mid-July. For now we just skip it.
+  if (Platform.OS === 'ios') {
+    return;
+  }
+
+  let token = await Notifications.getExponentPushTokenAsync();
 
   return fetch(PUSH_ENDPOINT, {
     method: 'POST',
@@ -24,12 +31,3 @@ export default async function registerForPushNotificationsAsync() {
   })
 }
 
-// Push Notifications are not currently implemented on iOS! This will be
-// available mid-July. The code below just provides a fake token for now.
-if (Platform.OS === 'ios') {
-  ExponentNotifications = {
-    getExponentPushTokenAsync: async () => {
-      return new Promise(resolve => resolve('fake-token'));
-    }
-  }
-}
