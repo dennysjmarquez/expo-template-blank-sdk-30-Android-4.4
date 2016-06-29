@@ -9,8 +9,6 @@ import { Font } from 'exponent';
 import {
   NavigationProvider,
   StackNavigation,
-  TabNavigation,
-  TabNavigationItem,
 } from '@exponent/ex-navigation';
 
 import registerForPushNotificationsAsync from 'registerForPushNotificationsAsync';
