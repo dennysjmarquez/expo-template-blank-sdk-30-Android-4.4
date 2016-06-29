@@ -9,7 +9,7 @@ import {
   ScrollView,
   TouchableOpacity,
   Text,
-  View
+  View,
 } from 'react-native';
 import ResponsiveImage from '@exponent/react-native-responsive-image';
 
@@ -18,7 +18,7 @@ import BrandedNavigationTitle from 'BrandedNavigationTitle';
 export default class LinksScreen extends React.Component {
   static route = {
     navigationBar: {
-      renderTitle: () => <BrandedNavigationTitle />
+      renderTitle: () => <BrandedNavigationTitle />,
     },
   }
 

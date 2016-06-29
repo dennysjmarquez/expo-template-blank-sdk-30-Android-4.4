@@ -3,14 +3,14 @@
  */
 
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
 import { Font } from 'exponent';
 
 const IconMap = {
   'cog': '\uf013',
   'icon-book': '\uf02d',
   'icon-ban-circle': '\uf05e',
-}
+};
 
 export default class FontAwesomeIcon extends React.Component {
   static defaultProps = {
@@ -23,7 +23,7 @@ export default class FontAwesomeIcon extends React.Component {
       <Text style={{
         ...Font.style('awesome'),
         fontSize: this.props.size,
-        color: this.props.color
+        color: this.props.color,
       }}>
         {IconMap[this.props.name]}
       </Text>

@@ -8,7 +8,7 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
 
 import BrandedNavigationTitle from 'BrandedNavigationTitle';
@@ -128,7 +128,7 @@ const Color = ({value}) => {
       </View>
     );
   }
-}
+};
 
 const SectionHeader = ({title}) => {
   return (
@@ -138,7 +138,7 @@ const SectionHeader = ({title}) => {
       </Text>
     </View>
   );
-}
+};
 
 const SectionContent = (props) => {
   return (
@@ -146,7 +146,7 @@ const SectionContent = (props) => {
       {props.children}
     </View>
   );
-}
+};
 
 const AppIconPreview = ({iconUrl}) => {
   if (!iconUrl) {
@@ -160,7 +160,7 @@ const AppIconPreview = ({iconUrl}) => {
       resizeMode="cover"
     />
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
