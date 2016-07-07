@@ -1,3 +1,15 @@
+/**
+ * This file contains the configuration for your Exponent app. See the comments
+ * inline for more details on the individual options.
+ *
+ * It is in the JSON5 format to allow for comments. If syntax highlighting in
+ * your editor is not working properly, you might want to install the
+ * JSON5 syntax package for your editor.
+ *
+ * For Atom - apm install language-json5
+ * For vim  - https://github.com/gutenye/json5.vim
+ */
+
 {
   // This is the name of your app in all senses of the word: it appears below
   // the icon on the home screen, in push notifications, etc.
@@ -18,30 +30,33 @@
   // runtime, so you can use it for reporting and such.
   version: "1.0.0",
 
-  // Allowed orientations: default is locked to portrait
+  // Allowed orientations: default is locked to portrait.
   orientation: "portrait",
 
-  // Android only: the color of the title bar in the Android multitasking view
+  // Android only: the color of the title bar in the Android multitasking view.
   primaryColor: "#cccccc",
 
-  // The icon image to use on your home screen
+  // The icon image to use on your home screen.
   iconUrl: "https://s3.amazonaws.com/exp-brand-assets/ExponentEmptyManifest_192.png",
 
-  // Push notification configuration: currently Android only
+  // Push notification configuration: currently Android only.
   notification: {
     // The image to use for the notification icon
     iconUrl: "https://s3.amazonaws.com/exp-us-standard/placeholder-push-icon.png",
 
-    // The background color for the notification icon
+    // The background color for the notification icon.
     color: "#000000"
   },
 
   loading: {
-    // The image to display in the center of the splash screen while loading the app
+    // The image to display in the center of the splash screen while loading the app.
     iconUrl: "https://s3.amazonaws.com/exp-brand-assets/ExponentEmptyManifest_192.png",
   },
 
+  // Options to pack into the packager.
   packagerOpts: {
+    // Any non-standard file extensions to support for your assets that you
+    // include with `require`.
     assetExts: ["ttf"]
   },
 }
