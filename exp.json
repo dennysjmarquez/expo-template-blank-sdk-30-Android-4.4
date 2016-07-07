@@ -39,5 +39,9 @@
   loading: {
     // The image to display in the center of the splash screen while loading the app
     iconUrl: "https://s3.amazonaws.com/exp-brand-assets/ExponentEmptyManifest_192.png",
-  }
+  },
+
+  packagerOpts: {
+    assetExts: ["ttf"]
+  },
 }

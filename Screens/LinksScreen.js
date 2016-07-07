@@ -8,10 +8,10 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
+  Image,
   Text,
   View,
 } from 'react-native';
-import ResponsiveImage from '@exponent/react-native-responsive-image';
 
 import BrandedNavigationTitle from 'BrandedNavigationTitle';
 
@@ -85,22 +85,16 @@ export default class LinksScreen extends React.Component {
 }
 
 const SlackIcon = () => (
-  <ResponsiveImage
-    sources={{
-      2: {uri: 'https://s3.amazonaws.com/exp-us-standard/slack-icon@2x.png'},
-      3: {uri: 'https://s3.amazonaws.com/exp-us-standard/slack-icon@3x.png'},
-    }}
+  <Image
+    source={require('../assets/images/slack-icon.png')}
     fadeDuration={0}
     style={{width: 20, height: 20}}
   />
 );
 
 const ExponentIcon = (props) => (
-  <ResponsiveImage
-    sources={{
-      2: {uri: 'https://s3.amazonaws.com/exp-us-standard/exponent-icon@2x.png'},
-      3: {uri: 'https://s3.amazonaws.com/exp-us-standard/exponent-icon@3x.png'},
-    }}
+  <Image
+    source={require('../assets/images/exponent-icon.png')}
     resizeMode="contain"
     fadeDuration={0}
     style={[{width: 20, height: 20, marginTop: 1}, props.style]}

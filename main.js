@@ -25,9 +25,7 @@ class AppContainer extends React.Component {
     registerForPushNotificationsAsync();
 
     // Load mandatory assets
-    await Font.loadAsync({
-      awesome: 'https://github.com/FortAwesome/Font-Awesome/raw/master/fonts/fontawesome-webfont.ttf',
-    });
+    await Font.loadAsync({awesome: require('./assets/fonts/fontawesome-webfont.ttf')});
 
     this.setState({assetsLoaded: true});
   }
