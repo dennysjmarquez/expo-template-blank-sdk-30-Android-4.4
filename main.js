@@ -5,7 +5,6 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-import { Font } from 'exponent';
 import {
   NavigationProvider,
   StackNavigation,
@@ -16,26 +15,11 @@ import Router from 'Router';
 
 class AppContainer extends React.Component {
 
-  state = {
-    assetsLoaded: false,
-  };
-
   async componentWillMount() {
-    // Register for push notifications
     registerForPushNotificationsAsync();
-
-    // Load mandatory assets
-    await Font.loadAsync({awesome: require('./assets/fonts/fontawesome-webfont.ttf')});
-
-    this.setState({assetsLoaded: true});
   }
 
-
   render() {
-    if (!this.state.assetsLoaded) {
-      return <View />;
-    }
-
     let { exp: { manifest } } = this.props;
 
     return (

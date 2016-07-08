@@ -12,9 +12,11 @@ import {
   TabNavigation,
   TabNavigationItem,
 } from '@exponent/ex-navigation';
+import {
+  FontAwesome,
+} from '@exponent/vector-icons';
 
 import Colors from 'Colors';
-import FontAwesomeIcon from 'FontAwesomeIcon';
 import Router from 'Router';
 
 export default class TabNavigationLayout extends React.Component {
@@ -38,19 +40,19 @@ export default class TabNavigationLayout extends React.Component {
 
         <TabNavigationItem
           id="links"
-          renderIcon={isSelected => this._renderIcon('icon-book', isSelected)}>
+          renderIcon={isSelected => this._renderIcon('book', isSelected)}>
           <StackNavigation initialRoute={Router.getRoute('links')} />
         </TabNavigationItem>
 
         <TabNavigationItem
           id="other-a"
-          renderIcon={isSelected => this._renderIcon('icon-ban-circle', isSelected)}>
+          renderIcon={isSelected => this._renderIcon('ban', isSelected)}>
           <StackNavigation initialRoute={Router.getRoute('links')} />
         </TabNavigationItem>
 
         <TabNavigationItem
           id="other-b"
-          renderIcon={isSelected => this._renderIcon('icon-ban-circle', isSelected)}>
+          renderIcon={isSelected => this._renderIcon('ban', isSelected)}>
           <StackNavigation initialRoute={Router.getRoute('links')} />
         </TabNavigationItem>
       </TabNavigation>
@@ -59,7 +61,7 @@ export default class TabNavigationLayout extends React.Component {
 
   _renderIcon(name, isSelected) {
     return (
-      <FontAwesomeIcon
+      <FontAwesome
         name={name}
         size={32}
         color={isSelected ? Colors.tabIconSelected : Colors.tabIconDefault}
