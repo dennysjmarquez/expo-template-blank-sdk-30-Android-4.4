@@ -2,9 +2,12 @@
  * @providesModule registerForPushNotificationsAsync
  */
 
-import { Platform } from 'react-native';
-
-import { Notifications } from 'exponent';
+import {
+  Platform,
+} from 'react-native';
+import {
+  Notifications,
+} from 'exponent';
 
 const PUSH_ENDPOINT = 'https://exponent-push-server.herokuapp.com/tokens';
 

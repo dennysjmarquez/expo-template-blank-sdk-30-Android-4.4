@@ -2,7 +2,9 @@
  * @providesModule Router
  */
 
-import { createRouter } from '@exponent/ex-navigation';
+import {
+  createRouter,
+} from '@exponent/ex-navigation';
 
 export default createRouter(() => ({
   home: () => require('ConfigScreen').default,

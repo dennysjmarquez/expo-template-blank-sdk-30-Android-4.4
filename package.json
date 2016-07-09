@@ -2,7 +2,7 @@
   "name": "MyNewProject",
   "version": "0.0.0",
   "description": "Hello Exponent!",
-  "author": "brentvatne@gmail.com",
+  "author": "Exponent <support@getexponent.com>",
   "private": true,
   "main": "main.js",
   "dependencies": {

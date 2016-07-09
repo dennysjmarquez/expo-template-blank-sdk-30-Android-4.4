@@ -10,12 +10,11 @@ import {
   StackNavigation,
 } from '@exponent/ex-navigation';
 
-import registerForPushNotificationsAsync from 'registerForPushNotificationsAsync';
 import Router from 'Router';
+import registerForPushNotificationsAsync from 'registerForPushNotificationsAsync';
 
 class AppContainer extends React.Component {
-
-  async componentWillMount() {
+  componentWillMount() {
     registerForPushNotificationsAsync();
   }
 
