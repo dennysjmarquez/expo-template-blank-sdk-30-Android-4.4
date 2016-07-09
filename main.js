@@ -48,6 +48,8 @@ class AppContainer extends React.Component {
             initialRoute={Router.getRoute('tabNavigationLayout', {manifest})}
           />
         </NavigationProvider>
+
+        { Platform.OS === 'android' && <View style={styles.statusBarUnderlay} /> }
       </View>
     );
   }
@@ -57,7 +59,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    marginTop: Platform.OS === 'ios' ? 0 : 24,
+  },
+  statusBarUnderlay: {
+    height: 24,
+    backgroundColor: 'rgba(0,0,0,0.2)',
   },
 });
 

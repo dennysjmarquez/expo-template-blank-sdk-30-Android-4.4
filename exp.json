@@ -53,7 +53,7 @@
     iconUrl: "https://s3.amazonaws.com/exp-brand-assets/ExponentEmptyManifest_192.png",
   },
 
-  // Options to pack into the packager.
+  // Options to pass into the packager.
   packagerOpts: {
     // Any non-standard file extensions to support for your assets that you
     // include with `require`.
