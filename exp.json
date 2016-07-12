@@ -24,7 +24,7 @@
 
   // The target Exponent SDK version. This must line up with the react-native
   // version in package.json
-  sdkVersion: "6.0.0",
+  sdkVersion: "7.0.0",
 
   // Your app version -- for your own use. This is available to your app at
   // runtime, so you can use it for reporting and such.
