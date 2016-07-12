@@ -10,7 +10,7 @@
     "@exponent/react-native-responsive-image": "^1.0.0",
     "@exponent/vector-icons": "^1.0.0",
     "babel-preset-react-native-stage-0": "^1.0.1",
-    "exponent": "^6.0.0",
+    "exponent": "^7.0.0",
     "lodash": "^4.13.1",
     "react": "^15.1.0",
     "react-native": "github:exponentjs/react-native#sdk-7"
