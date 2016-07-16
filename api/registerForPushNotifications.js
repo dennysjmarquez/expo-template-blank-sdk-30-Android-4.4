@@ -12,12 +12,6 @@ import {
 const PUSH_ENDPOINT = 'https://exponent-push-server.herokuapp.com/tokens';
 
 export default async function registerForPushNotificationsAsync() {
-  // Push Notifications are not implemented on iOS yet! This will be available
-  // mid-July. For now we just skip it.
-  if (Platform.OS === 'ios') {
-    return;
-  }
-
   let token = await Notifications.getExponentPushTokenAsync();
 
   return fetch(PUSH_ENDPOINT, {

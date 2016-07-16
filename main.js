@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   AppRegistry,
+  DeviceEventEmitter,
   Platform,
   StyleSheet,
   View,
@@ -14,8 +15,26 @@ import Router from 'Router';
 import registerForPushNotificationsAsync from 'registerForPushNotificationsAsync';
 
 class AppContainer extends React.Component {
+
   componentWillMount() {
     registerForPushNotificationsAsync();
+
+    // This fires at different times for iOS and Android.
+    //
+    // iOS - if app is foregrounded, immediately upon delivery. Otherwise,
+    // when the notification is tapped.
+    //
+    // Android - only when the notification is tapped.
+    //
+    this._notificationSubscription = DeviceEventEmitter.addListener(
+      'Exponent.notification', (notification) => {
+        console.log({notification});
+      }
+    );
+  }
+
+  componentWillUnmount() {
+    this._notificationSubscription.remove();
   }
 
   render() {
