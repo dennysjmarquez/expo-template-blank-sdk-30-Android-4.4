@@ -6,7 +6,7 @@
   "private": true,
   "main": "main.js",
   "dependencies": {
-    "@exponent/ex-navigation": "^1.3.0",
+    "@exponent/ex-navigation": "^1.3.2",
     "@exponent/react-native-responsive-image": "^1.0.0",
     "@exponent/vector-icons": "^1.0.1",
     "babel-preset-react-native-stage-0": "^1.0.1",
