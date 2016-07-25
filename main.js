@@ -38,14 +38,12 @@ class AppContainer extends React.Component {
   }
 
   render() {
-    let { exp: { manifest } } = this.props;
-
     return (
       <View style={styles.container}>
         <NavigationProvider router={Router}>
           <StackNavigation
             id="root"
-            initialRoute={Router.getRoute('tabNavigationLayout', {manifest})}
+            initialRoute={Router.getRoute('tabNavigationLayout')}
           />
         </NavigationProvider>
 

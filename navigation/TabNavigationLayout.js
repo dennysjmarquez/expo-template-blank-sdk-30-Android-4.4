@@ -20,13 +20,7 @@ import Colors from 'Colors';
 import Router from 'Router';
 
 export default class TabNavigationLayout extends React.Component {
-  static propTypes = {
-    manifest: PropTypes.object.isRequired,
-  };
-
   render() {
-    let { manifest } = this.props;
-
     return (
       <TabNavigation
         tabBarColor={Colors.tabBar}
@@ -35,7 +29,7 @@ export default class TabNavigationLayout extends React.Component {
         <TabNavigationItem
           id="home"
           renderIcon={isSelected => this._renderIcon('cog', isSelected)}>
-          <StackNavigation initialRoute={Router.getRoute('home', {manifest})} />
+          <StackNavigation initialRoute={Router.getRoute('home')} />
         </TabNavigationItem>
 
         <TabNavigationItem

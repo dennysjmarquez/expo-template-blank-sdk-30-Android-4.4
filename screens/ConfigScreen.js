@@ -10,14 +10,11 @@ import {
   Text,
   View,
 } from 'react-native';
+import { Constants } from 'exponent';
 
 import BrandedNavigationTitle from 'BrandedNavigationTitle';
 
 export default class ConfigScreen extends React.Component {
-  static propTypes = {
-    manifest: PropTypes.object.isRequired,
-  }
-
   static route = {
     navigationBar: {
       renderTitle: () => <BrandedNavigationTitle />,
@@ -25,7 +22,7 @@ export default class ConfigScreen extends React.Component {
   }
 
   _renderTitle() {
-    let { manifest } = this.props;
+    const { manifest } = Constants;
 
     return (
       <View style={styles.titleContainer}>
@@ -51,7 +48,7 @@ export default class ConfigScreen extends React.Component {
   }
 
   render() {
-    let { manifest } = this.props;
+    const { manifest } = Constants;
 
     return (
       <ScrollView style={styles.container}>
