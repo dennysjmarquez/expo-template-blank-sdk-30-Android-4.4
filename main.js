@@ -19,18 +19,20 @@ class AppContainer extends React.Component {
   componentWillMount() {
     registerForPushNotificationsAsync();
 
-    // This fires at different times for iOS and Android.
-    //
-    // iOS - if app is foregrounded, immediately upon delivery. Otherwise,
-    // when the notification is tapped.
-    //
-    // Android - only when the notification is tapped.
-    //
     this._notificationSubscription = DeviceEventEmitter.addListener(
-      'Exponent.notification', (notification) => {
-        console.log({notification});
-      }
+      'Exponent.notification', this._handleNotification
     );
+
+    if (this.props.exp.notification) {
+      this._handleNotification(this.props.exp.notification);
+    }
+  }
+
+  _handleNotification = (notification) => {
+    // In SDK 7, the payload we receive on iOS is just {...pushData} rather
+    // than {data: pushData}, this will be fixed in SDK 8!
+    const data = notification.data ? notification.data : notification;
+    console.log({data});
   }
 
   componentWillUnmount() {
