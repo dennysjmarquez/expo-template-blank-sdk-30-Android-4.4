@@ -29,10 +29,7 @@ class AppContainer extends React.Component {
   }
 
   _handleNotification = (notification) => {
-    // In SDK 7, the payload we receive on iOS is just {...pushData} rather
-    // than {data: pushData}, this will be fixed in SDK 8!
-    const data = notification.data ? notification.data : notification;
-    console.log({data});
+    console.log({notification});
   }
 
   componentWillUnmount() {
