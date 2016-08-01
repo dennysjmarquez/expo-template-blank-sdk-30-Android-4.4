@@ -1,5 +1,5 @@
 /**
- * @providesModule ConfigScreen
+ * @providesModule HomeScreen
  */
 
 import React, { PropTypes } from 'react';
@@ -14,7 +14,7 @@ import { Constants } from 'exponent';
 
 import BrandedNavigationTitle from 'BrandedNavigationTitle';
 
-export default class ConfigScreen extends React.Component {
+export default class HomeScreen extends React.Component {
   static route = {
     navigationBar: {
       renderTitle: () => <BrandedNavigationTitle />,

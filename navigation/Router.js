@@ -6,12 +6,12 @@ import {
   createRouter,
 } from '@exponent/ex-navigation';
 
-import ConfigScreen from 'ConfigScreen';
+import HomeScreen from 'HomeScreen';
 import LinksScreen from 'LinksScreen';
 import TabNavigationLayout from 'TabNavigationLayout';
 
 export default createRouter(() => ({
-  home: () => ConfigScreen,
+  home: () => HomeScreen,
   links: () => LinksScreen,
   tabNavigationLayout: () => TabNavigationLayout,
 }));
