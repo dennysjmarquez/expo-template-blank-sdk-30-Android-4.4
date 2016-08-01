@@ -31,16 +31,21 @@ class AppContainer extends React.Component {
   }
 
   componentWillMount() {
+    // Cache important assets like fonts and logo images
     this._loadAssetsAsync();
+
+    // Send our push token over to our backend so we can receive notifications
     registerForPushNotificationsAsync();
 
-    this._notificationSubscription = DeviceEventEmitter.addListener(
-      'Exponent.notification', this._handleNotification
-    );
-
+    // If we started the app from a push notification, handle it right away
     if (this.props.exp.notification) {
       this._handleNotification(this.props.exp.notification);
     }
+
+    // Handle notifications that come in while the app is open
+    this._notificationSubscription = DeviceEventEmitter.addListener(
+      'Exponent.notification', this._handleNotification
+    );
   }
 
   componentWillUnmount() {
@@ -68,13 +73,13 @@ class AppContainer extends React.Component {
   }
 
   async _loadAssetsAsync() {
-    let imageAssets = cacheImages([
+    const imageAssets = cacheImages([
       require('./assets/images/exponent-wordmark.png'),
       require('./assets/images/exponent-icon.png'),
       require('./assets/images/slack-icon.png'),
     ]);
 
-    let fontAssets = cacheFonts([
+    const fontAssets = cacheFonts([
       FontAwesome.font,
     ]);
 
