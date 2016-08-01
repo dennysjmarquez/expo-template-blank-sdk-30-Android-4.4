@@ -30,7 +30,7 @@ export default class TabNavigationLayout extends React.Component {
   render() {
     return (
       <TabNavigation
-        translucent
+        translucent={Platform.OS === 'ios'}
         tabBarHeight={56}
         initialTab="home">
         <TabNavigationItem
