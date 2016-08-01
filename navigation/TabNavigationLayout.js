@@ -4,6 +4,7 @@
 
 import React, { PropTypes } from 'react';
 import {
+  Platform,
   StyleSheet,
   View,
 } from 'react-native';
@@ -19,35 +20,53 @@ import {
 import Colors from 'Colors';
 import Router from 'Router';
 
+const defaultRouteConfig = {
+  navigationBar: {
+    translucent: Platform.OS === 'ios',
+  },
+};
+
 export default class TabNavigationLayout extends React.Component {
   render() {
     return (
       <TabNavigation
-        tabBarColor={Colors.tabBar}
+        translucent
         tabBarHeight={56}
         initialTab="home">
         <TabNavigationItem
           id="home"
           renderIcon={isSelected => this._renderIcon('cog', isSelected)}>
-          <StackNavigation initialRoute={Router.getRoute('home')} />
+          <StackNavigation
+            defaultRouteConfig={defaultRouteConfig}
+            initialRoute={Router.getRoute('home')}
+          />
         </TabNavigationItem>
 
         <TabNavigationItem
           id="links"
           renderIcon={isSelected => this._renderIcon('book', isSelected)}>
-          <StackNavigation initialRoute={Router.getRoute('links')} />
+          <StackNavigation
+            defaultRouteConfig={defaultRouteConfig}
+            initialRoute={Router.getRoute('links')}
+          />
         </TabNavigationItem>
 
         <TabNavigationItem
           id="other-a"
           renderIcon={isSelected => this._renderIcon('ban', isSelected)}>
-          <StackNavigation initialRoute={Router.getRoute('links')} />
+          <StackNavigation
+            defaultRouteConfig={defaultRouteConfig}
+            initialRoute={Router.getRoute('links')}
+          />
         </TabNavigationItem>
 
         <TabNavigationItem
           id="other-b"
           renderIcon={isSelected => this._renderIcon('ban', isSelected)}>
-          <StackNavigation initialRoute={Router.getRoute('links')} />
+          <StackNavigation
+            defaultRouteConfig={defaultRouteConfig}
+            initialRoute={Router.getRoute('links')}
+          />
         </TabNavigationItem>
       </TabNavigation>
     );

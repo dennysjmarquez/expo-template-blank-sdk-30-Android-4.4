@@ -18,6 +18,7 @@ export default class ConfigScreen extends React.Component {
   static route = {
     navigationBar: {
       renderTitle: () => <BrandedNavigationTitle />,
+      translucent: true,
     },
   }
 
@@ -49,9 +50,12 @@ export default class ConfigScreen extends React.Component {
 
   render() {
     const { manifest } = Constants;
+    const { route } = this.props;
 
     return (
-      <ScrollView style={styles.container}>
+      <ScrollView
+        style={styles.container}
+        contentContainerStyle={route.getContentContainerStyle()}>
         {this._renderTitle()}
 
         <SectionHeader title="sdkVersion" />

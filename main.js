@@ -3,6 +3,7 @@ import {
   AppRegistry,
   DeviceEventEmitter,
   Platform,
+  StatusBar,
   StyleSheet,
   View,
 } from 'react-native';
@@ -46,7 +47,8 @@ class AppContainer extends React.Component {
           />
         </NavigationProvider>
 
-        { Platform.OS === 'android' && <View style={styles.statusBarUnderlay} /> }
+        <StatusBar barStyle="default" />
+        {Platform.OS === 'android' && <View style={styles.statusBarUnderlay} />}
       </View>
     );
   }
