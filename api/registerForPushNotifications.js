@@ -6,6 +6,7 @@ import {
   Platform,
 } from 'react-native';
 import {
+  Permissions,
   Notifications,
 } from 'exponent';
 
@@ -13,8 +14,20 @@ import {
 const PUSH_ENDPOINT = 'https://exponent-push-server.herokuapp.com/tokens';
 
 export default async function registerForPushNotificationsAsync() {
+  // This is only necessary on iOS because we get permissions when we install the
+  // app on Android
+  if (Platform.OS === 'ios') {
+    let { status } = await Permissions.askAsync(Permissions.REMOTE_NOTIFICATIONS);
+
+    if (status !== 'granted') {
+      return;
+    }
+  }
+
+  // Get the token that uniquely identifies this device
   let token = await Notifications.getExponentPushTokenAsync();
 
+  // POST the token to our backend so we can use it to send pushes from there
   return fetch(PUSH_ENDPOINT, {
     method: 'POST',
     headers: {
