@@ -14,11 +14,42 @@ import { Constants } from 'exponent';
 
 import BrandedNavigationTitle from 'BrandedNavigationTitle';
 
+const SectionHeader = ({title}) => {
+  return (
+    <View style={styles.sectionHeaderContainer}>
+      <Text style={styles.sectionHeaderText}>
+        {title}
+      </Text>
+    </View>
+  );
+};
+
+const SectionContent = (props) => {
+  return (
+    <View style={styles.sectionContentContainer}>
+      {props.children}
+    </View>
+  );
+};
+
+const AppIconPreview = ({iconUrl}) => {
+  if (!iconUrl) {
+    iconUrl = 'https://s3.amazonaws.com/exp-brand-assets/ExponentEmptyManifest_192.png';
+  }
+
+  return (
+    <Image
+      source={{uri: iconUrl}}
+      style={{width: 64, height: 64}}
+      resizeMode="cover"
+    />
+  );
+};
+
 export default class HomeScreen extends React.Component {
   static route = {
     navigationBar: {
       renderTitle: () => <BrandedNavigationTitle />,
-      translucent: true,
     },
   }
 
@@ -58,7 +89,6 @@ export default class HomeScreen extends React.Component {
         contentContainerStyle={route.getContentContainerStyle()}>
         {this._renderTitle()}
 
-        <SectionHeader title="sdkVersion" />
         <SectionContent>
           <Text style={styles.sectionContentText}>
             {manifest.sdkVersion}
@@ -129,38 +159,6 @@ const Color = ({value}) => {
       </View>
     );
   }
-};
-
-const SectionHeader = ({title}) => {
-  return (
-    <View style={styles.sectionHeaderContainer}>
-      <Text style={styles.sectionHeaderText}>
-        {title}
-      </Text>
-    </View>
-  );
-};
-
-const SectionContent = (props) => {
-  return (
-    <View style={styles.sectionContentContainer}>
-      {props.children}
-    </View>
-  );
-};
-
-const AppIconPreview = ({iconUrl}) => {
-  if (!iconUrl) {
-    iconUrl = 'https://s3.amazonaws.com/exp-brand-assets/ExponentEmptyManifest_192.png';
-  }
-
-  return (
-    <Image
-      source={{uri: iconUrl}}
-      style={{width: 64, height: 64}}
-      resizeMode="cover"
-    />
-  );
 };
 
 const styles = StyleSheet.create({
