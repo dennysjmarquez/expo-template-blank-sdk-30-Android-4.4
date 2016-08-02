@@ -14,14 +14,13 @@ import {
 const PUSH_ENDPOINT = 'https://exponent-push-server.herokuapp.com/tokens';
 
 export default async function registerForPushNotificationsAsync() {
-  // This is only necessary on iOS because we get permissions when we install the
-  // app on Android
-  if (Platform.OS === 'ios') {
-    let { status } = await Permissions.askAsync(Permissions.REMOTE_NOTIFICATIONS);
+  // Android remote notification permissions are granted during the app
+  // install, so this will only ask on iOS
+  let { status } = await Permissions.askAsync(Permissions.REMOTE_NOTIFICATIONS);
 
-    if (status !== 'granted') {
-      return;
-    }
+  // Stop here if the user did not grant permissions
+  if (status !== 'granted') {
+    return;
   }
 
   // Get the token that uniquely identifies this device
