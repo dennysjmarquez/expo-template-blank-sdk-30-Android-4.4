@@ -23,13 +23,15 @@ export default class HomeScreen extends React.Component {
   }
 
   render() {
-    const { route } = this.props;
-
     return (
       <ScrollView
         style={styles.container}
-        contentContainerStyle={route.getContentContainerStyle()}>
+        contentContainerStyle={this.props.route.getContentContainerStyle()}>
+
+        { /* Go ahead and delete ExponentConfigView and replace it with your
+           * content, we just wanted to give you a quick view of your config */ }
         <ExponentConfigView />
+
       </ScrollView>
     );
   }

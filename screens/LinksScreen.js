@@ -23,12 +23,10 @@ export default class LinksScreen extends React.Component {
   }
 
   render() {
-    const { route } = this.props;
-
     return (
       <ScrollView
         style={styles.container}
-        contentContainerStyle={route.getContentContainerStyle()}>
+        contentContainerStyle={this.props.route.getContentContainerStyle()}>
         <Text style={styles.optionsTitleText}>
           Resources
         </Text>
