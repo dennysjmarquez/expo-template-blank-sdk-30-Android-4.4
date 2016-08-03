@@ -1,7 +1,3 @@
-/**
- * @providesModule BrandedNavigationTitle
- */
-
 import React from 'react';
 import {
   Image,

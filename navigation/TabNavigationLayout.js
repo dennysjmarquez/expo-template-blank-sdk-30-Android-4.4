@@ -1,8 +1,6 @@
-/**
- * @providesModule TabNavigationLayout
- */
-
-import React, { PropTypes } from 'react';
+import React, {
+  PropTypes
+} from 'react';
 import {
   Platform,
   StyleSheet,
@@ -17,8 +15,8 @@ import {
   FontAwesome,
 } from '@exponent/vector-icons';
 
-import Colors from 'Colors';
-import Router from 'Router';
+import Colors from '../constants/Colors';
+import Router from '../navigation/Router';
 
 const defaultRouteConfig = {
   navigationBar: {

@@ -1,7 +1,3 @@
-/**
- * @providesModule HomeScreen
- */
-
 import React, {
   PropTypes,
 } from 'react';
@@ -13,7 +9,7 @@ import {
   ExponentConfigView,
 } from '@exponent/samples';
 
-import BrandedNavigationTitle from 'BrandedNavigationTitle';
+import BrandedNavigationTitle from '../navigation/BrandedNavigationTitle';
 
 export default class HomeScreen extends React.Component {
   static route = {

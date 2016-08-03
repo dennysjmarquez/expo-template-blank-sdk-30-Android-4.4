@@ -1,7 +1,3 @@
-/**
- * @providesModule cacheHelpers
- */
-
 import {
   Asset,
   Font,

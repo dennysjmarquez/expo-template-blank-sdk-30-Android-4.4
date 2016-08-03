@@ -17,13 +17,15 @@ import {
 import {
   Components,
 } from 'exponent';
+
+import Router from './navigation/Router';
+
+import registerForPushNotificationsAsync from './api/registerForPushNotificationsAsync';
 import {
   cacheImages,
   cacheFonts,
-} from 'cacheHelpers';
+} from './utilities/cacheHelpers';
 
-import Router from 'Router';
-import registerForPushNotificationsAsync from 'registerForPushNotificationsAsync';
 
 class AppContainer extends React.Component {
   state = {

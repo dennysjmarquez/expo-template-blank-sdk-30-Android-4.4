@@ -1,7 +1,3 @@
-/**
- * @providesModule LinksScreen
- */
-
 import React from 'react';
 import {
   Linking,
@@ -13,7 +9,7 @@ import {
   View,
 } from 'react-native';
 
-import BrandedNavigationTitle from 'BrandedNavigationTitle';
+import BrandedNavigationTitle from '../navigation/BrandedNavigationTitle';
 
 export default class LinksScreen extends React.Component {
   static route = {

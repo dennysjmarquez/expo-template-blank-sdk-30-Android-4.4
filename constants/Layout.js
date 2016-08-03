@@ -1,7 +1,3 @@
-/**
- * @providesModule Layout
- */
-
 import {
   Dimensions,
 } from 'react-native';

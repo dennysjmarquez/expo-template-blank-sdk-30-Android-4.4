@@ -1,7 +1,3 @@
-/**
- * @providesModule registerForPushNotificationsAsync
- */
-
 import {
   Platform,
 } from 'react-native';
