@@ -1,3 +1,7 @@
+/** In order for logging to stream to XDE or the exp CLI you must import the
+  * exponent module at some point in your app */
+import * as Exponent from 'exponent';
+
 import React from 'react';
 import {
   AppRegistry,
@@ -14,9 +18,6 @@ import {
 import {
   FontAwesome,
 } from '@exponent/vector-icons';
-import {
-  Components,
-} from 'exponent';
 
 import Router from './navigation/Router';
 
@@ -56,7 +57,7 @@ class AppContainer extends React.Component {
 
   render() {
     if (!this.state.appIsReady) {
-      return <Components.AppLoading />;
+      return <Exponent.Components.AppLoading />;
     }
 
     return (
