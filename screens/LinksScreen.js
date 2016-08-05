@@ -14,7 +14,7 @@ import BrandedNavigationTitle from '../navigation/BrandedNavigationTitle';
 export default class LinksScreen extends React.Component {
   static route = {
     navigationBar: {
-      renderTitle: () => <BrandedNavigationTitle />,
+      title: 'Links',
     },
   }
 
@@ -30,7 +30,11 @@ export default class LinksScreen extends React.Component {
         <TouchableOpacity style={styles.optionsContainer} onPress={this._handlePressSlack}>
           <View style={styles.option}>
             <View style={styles.optionIconContainer}>
-              <SlackIcon />
+              <Image
+                source={require('../assets/images/slack-icon.png')}
+                fadeDuration={0}
+                style={{width: 20, height: 20}}
+              />
             </View>
             <View style={styles.optionTextContainer}>
               <Text style={styles.optionText}>
@@ -43,24 +47,16 @@ export default class LinksScreen extends React.Component {
         <TouchableOpacity style={styles.optionsContainer} onPress={this._handlePressDocs}>
           <View style={styles.option}>
             <View style={styles.optionIconContainer}>
-              <ExponentIcon />
+              <Image
+                source={require('../assets/images/exponent-icon.png')}
+                resizeMode="contain"
+                fadeDuration={0}
+                style={{width: 20, height: 20, marginTop: 1}}
+              />
             </View>
             <View style={styles.optionTextContainer}>
               <Text style={styles.optionText}>
                 Read the Exponent documentation
-              </Text>
-            </View>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.optionsContainer} onPress={this._handlePressShowcase}>
-          <View style={styles.option}>
-            <View style={styles.optionIconContainer}>
-              <ExponentIcon style={{tintColor:"#888"}} />
-            </View>
-            <View style={styles.optionTextContainer}>
-              <Text style={styles.optionText}>
-                Explore the Exponent API Showcase
               </Text>
             </View>
           </View>
@@ -76,28 +72,7 @@ export default class LinksScreen extends React.Component {
   _handlePressDocs = () => {
     Linking.openURL('http://docs.getexponent.com');
   }
-
-  _handlePressShowcase = () => {
-    Linking.openURL('exp://exp.host/@jesse/exponent-showcase');
-  }
 }
-
-const SlackIcon = () => (
-  <Image
-    source={require('../assets/images/slack-icon.png')}
-    fadeDuration={0}
-    style={{width: 20, height: 20}}
-  />
-);
-
-const ExponentIcon = (props) => (
-  <Image
-    source={require('../assets/images/exponent-icon.png')}
-    resizeMode="contain"
-    fadeDuration={0}
-    style={[{width: 20, height: 20, marginTop: 1}, props.style]}
-  />
-);
 
 const styles = StyleSheet.create({
   container: {
