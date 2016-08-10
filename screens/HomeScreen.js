@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 import {
   Image,
+  Linking,
   Platform,
   ScrollView,
   StyleSheet,
@@ -52,7 +53,7 @@ export default class HomeScreen extends React.Component {
           </View>
 
           <View style={styles.helpContainer}>
-            <Text style={styles.helpLinkText}>
+            <Text style={styles.helpLinkText} onPress={this._handleHelpPress}>
               Help, it didn’t automatically reload!
             </Text>
           </View>
@@ -69,6 +70,10 @@ export default class HomeScreen extends React.Component {
         </View>
       </View>
     );
+  }
+
+  _handleHelpPress = () => {
+    Linking.openURL('https://docs.getexponent.com/versions/v8.0.0/guides/up-and-running.html#can-t-see-your-changes');
   }
 }
 

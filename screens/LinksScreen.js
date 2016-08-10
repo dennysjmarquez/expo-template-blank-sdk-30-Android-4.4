@@ -1,7 +1,7 @@
 import React from 'react';
 import {
-  StyleSheet,
   ScrollView,
+  StyleSheet,
 } from 'react-native';
 import {
   ExponentLinksView,

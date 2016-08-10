@@ -19,7 +19,7 @@ import {
 } from '@exponent/vector-icons';
 
 import Router from './navigation/Router';
-import cacheAssets from './utilities/cacheAssets';
+import cacheAssetsAsync from './utilities/cacheAssetsAsync';
 
 class AppContainer extends React.Component {
   state = {
@@ -31,7 +31,7 @@ class AppContainer extends React.Component {
   }
 
   async _loadAssetsAsync() {
-    await cacheAssets({
+    await cacheAssetsAsync({
       images: [
         require('./assets/images/exponent-wordmark.png'),
       ],
@@ -45,16 +45,16 @@ class AppContainer extends React.Component {
   }
 
   render() {
-    let { appIsReady } = this.state;
-    let { notification } = this.props.exp;
+    if (this.state.appIsReady) {
+      let { notification } = this.props.exp;
+      let initialRoute = Router.getRoute('rootNavigation', {notification});
 
-    if (appIsReady) {
       return (
         <View style={styles.container}>
           <NavigationProvider router={Router}>
             <StackNavigation
               id="root"
-              initialRoute={Router.getRoute('rootNavigation', {notification})}
+              initialRoute={initialRoute}
             />
           </NavigationProvider>
 

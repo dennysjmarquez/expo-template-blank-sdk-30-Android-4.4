@@ -3,7 +3,7 @@ import {
   Font,
 } from 'exponent';
 
-export default function cacheAssets({images = [], fonts = []}) {
+export default function cacheAssetsAsync({images = [], fonts = []}) {
   return Promise.all([
     ...cacheImages(images),
     ...cacheFonts(fonts),

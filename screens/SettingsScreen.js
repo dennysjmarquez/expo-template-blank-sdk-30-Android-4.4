@@ -1,20 +1,11 @@
-import React, {
-  PropTypes,
-} from 'react';
+import React from 'react';
 import {
-  Platform,
   ScrollView,
   StyleSheet,
-  Text,
-  View,
 } from 'react-native';
 import {
   ExponentConfigView,
 } from '@exponent/samples';
-
-import {
-  MonoText,
-} from '../components/StyledText';
 
 export default class SettingsScreen extends React.Component {
   static route = {
