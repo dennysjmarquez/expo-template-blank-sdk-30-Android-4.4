@@ -9,7 +9,7 @@ import {
 export class MonoText extends React.Component {
   render() {
     return (
-      <Text {...this.props} style={[this.props.style, ...Font.style('space-mono')]} />
+      <Text {...this.props} style={[this.props.style, Font.style('space-mono')]} />
     );
   }
 }
