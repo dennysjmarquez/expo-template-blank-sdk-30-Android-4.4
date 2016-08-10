@@ -79,6 +79,10 @@ export default class RootNavigation extends React.Component {
   }
 
   _handleNotification = ({origin, data}) => {
+    if (typeof data === 'string') {
+      data = JSON.parse(data);
+    }
+
     this.props.navigator.showLocalAlert(
       `Push notification ${origin} with data: ${JSON.stringify(data)}`,
       Alerts.notice

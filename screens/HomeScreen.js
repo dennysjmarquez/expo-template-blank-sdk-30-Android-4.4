@@ -51,6 +51,11 @@ export default class HomeScreen extends React.Component {
             </Text>
           </View>
 
+          <View style={styles.helpContainer}>
+            <Text style={styles.helpLinkText}>
+              Help, it didn’t automatically reload!
+            </Text>
+          </View>
         </ScrollView>
 
         <View style={styles.tabBarInfoContainer}>
@@ -114,20 +119,20 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    alignItems: 'center',
-    backgroundColor: '#fbfbfb',
-    paddingVertical: 20,
     ...Platform.select({
       ios: {
         shadowColor: 'black',
-        shadowOffset: {height: -5},
+        shadowOffset: {height: -3},
         shadowOpacity: 0.1,
         shadowRadius: 3,
       },
       android: {
-        elevation: 2,
+        elevation: 20,
       },
     }),
+    alignItems: 'center',
+    backgroundColor: '#fbfbfb',
+    paddingVertical: 20,
   },
   tabBarInfoText: {
     fontSize: 17,
@@ -136,5 +141,13 @@ const styles = StyleSheet.create({
   },
   navigationFilename: {
     marginTop: 5,
+  },
+  helpContainer: {
+    marginTop: 25,
+    alignItems: 'center',
+  },
+  helpLinkText: {
+    fontSize: 14,
+    color: '#2e78b7',
   },
 });
