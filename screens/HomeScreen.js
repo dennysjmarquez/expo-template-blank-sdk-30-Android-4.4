@@ -8,6 +8,7 @@ import {
   ScrollView,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
 
@@ -53,9 +54,11 @@ export default class HomeScreen extends React.Component {
           </View>
 
           <View style={styles.helpContainer}>
-            <Text style={styles.helpLinkText} onPress={this._handleHelpPress}>
-              Help, it didn’t automatically reload!
-            </Text>
+            <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
+              <Text style={styles.helpLinkText}>
+                Help, it didn’t automatically reload!
+              </Text>
+            </TouchableOpacity>
           </View>
         </ScrollView>
 
@@ -148,8 +151,11 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   helpContainer: {
-    marginTop: 25,
+    marginTop: 15,
     alignItems: 'center',
+  },
+  helpLink: {
+    paddingVertical: 15,
   },
   helpLinkText: {
     fontSize: 14,
