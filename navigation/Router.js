@@ -4,10 +4,12 @@ import {
 
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
-import TabNavigationLayout from './TabNavigationLayout';
+import SettingsScreen from '../screens/SettingsScreen';
+import RootNavigation from './RootNavigation';
 
 export default createRouter(() => ({
   home: () => HomeScreen,
   links: () => LinksScreen,
-  tabNavigationLayout: () => TabNavigationLayout,
+  settings: () => SettingsScreen,
+  rootNavigation: () => RootNavigation,
 }));
