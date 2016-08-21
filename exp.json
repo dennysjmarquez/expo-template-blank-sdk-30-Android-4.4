@@ -2,7 +2,7 @@
   "name": "My New Project",
   "description": "A starter template",
   "slug": "my-new-project",
-  "sdkVersion": "8.0.0",
+  "sdkVersion": "9.0.0",
   "version": "1.0.0",
   "orientation": "portrait",
   "primaryColor": "#cccccc",
