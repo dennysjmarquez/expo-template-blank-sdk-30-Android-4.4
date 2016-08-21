@@ -12,7 +12,8 @@
     "color": "#000000"
   },
   "loading": {
-    "iconUrl": "https://s3.amazonaws.com/exp-brand-assets/ExponentEmptyManifest_192.png"
+    "iconUrl": "https://s3.amazonaws.com/exp-brand-assets/ExponentEmptyManifest_192.png",
+    "hideExponentText": false
   },
   "packagerOpts": {
     "assetExts": ["ttf"]
