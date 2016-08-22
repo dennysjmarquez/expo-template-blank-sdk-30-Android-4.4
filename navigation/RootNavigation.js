@@ -69,6 +69,9 @@ export default class RootNavigation extends React.Component {
     const { notification } = this.props;
 
     // Send our push token over to our backend so we can receive notifications
+    // You can comment the following line out if you want to stop receiving
+    // a notification every time you open the app. Check out the source
+    // for this function in api/registerForPushNotificationsAsync.js
     registerForPushNotificationsAsync();
 
     // If we started the app from a push notification, handle it right away
