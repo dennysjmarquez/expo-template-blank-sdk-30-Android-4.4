@@ -29,17 +29,16 @@ export default class HomeScreen extends React.Component {
           contentContainerStyle={styles.contentContainer}>
 
           <View style={styles.welcomeContainer}>
-            <Text style={styles.welcomeText}>
-              Welcome to
-            </Text>
-
             <Image
               source={require('../assets/images/exponent-wordmark.png')}
               style={styles.welcomeImage}
             />
           </View>
 
+
           <View style={styles.getStartedContainer}>
+            {this._maybeRenderDevelopmentModeWarning()}
+
             <Text style={styles.getStartedText}>
               Get started by opening
             </Text>
@@ -75,8 +74,35 @@ export default class HomeScreen extends React.Component {
     );
   }
 
+  _maybeRenderDevelopmentModeWarning() {
+    if (__DEV__) {
+      const learnMoreButton = (
+        <Text onPress={this._handleLearnMorePress} style={styles.helpLinkText}>
+          Learn more
+        </Text>
+      );
+
+      return (
+        <Text style={styles.developmentModeText}>
+          Development mode is enabled, your app will run slightly slower but
+          you have access to useful development tools. {learnMoreButton}.
+        </Text>
+      );
+    } else {
+      return (
+        <Text style={styles.developmentModeText}>
+          You are not in development mode, your app will run at full speed.
+        </Text>
+      );
+    }
+  }
+
+  _handleLearnMorePress = () => {
+    Linking.openURL('https://docs.getexponent.com/versions/latest/guides/development-mode');
+  }
+
   _handleHelpPress = () => {
-    Linking.openURL('https://docs.getexponent.com/versions/v8.0.0/guides/up-and-running.html#can-t-see-your-changes');
+    Linking.openURL('https://docs.getexponent.com/versions/latest/guides/up-and-running.html#can-t-see-your-changes');
   }
 }
 
@@ -85,16 +111,19 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
+  developmentModeText: {
+    marginBottom: 20,
+    color: 'rgba(0,0,0,0.4)',
+    fontSize: 15,
+    textAlign: 'center',
+  },
   contentContainer: {
     paddingTop: 80,
   },
   welcomeContainer: {
     alignItems: 'center',
-    marginBottom: 30,
-  },
-  welcomeText: {
-    fontSize: 19,
-    color: 'rgba(96,100,109, 1)',
+    marginTop: 10,
+    marginBottom: 20,
   },
   welcomeImage: {
     width: 200,
