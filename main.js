@@ -34,6 +34,7 @@ class AppContainer extends React.Component {
           require('./assets/images/exponent-wordmark.png'),
         ],
         fonts: [
+          FontAwesome.font,
           {'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf')},
         ],
       });
