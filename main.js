@@ -47,16 +47,10 @@ class AppContainer extends React.Component {
 
   render() {
     if (this.state.appIsReady) {
-      let { notification } = this.props.exp;
-      let initialRoute = Router.getRoute('rootNavigation', {notification});
-
       return (
         <View style={styles.container}>
           <NavigationProvider router={Router}>
-            <StackNavigation
-              id="root"
-              initialRoute={initialRoute}
-            />
+            <StackNavigation id="root" initialRoute={Router.getRoute('rootNavigation')} />
           </NavigationProvider>
 
           {Platform.OS === 'ios' && <StatusBar barStyle="default" />}

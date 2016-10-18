@@ -1,11 +1,12 @@
-import React, {
-  PropTypes
-} from 'react';
+import React from 'react';
 import {
   DeviceEventEmitter,
   StyleSheet,
   View,
 } from 'react-native';
+import {
+  Notifications,
+} from 'exponent';
 import {
   StackNavigation,
   TabNavigation,
@@ -66,24 +67,19 @@ export default class RootNavigation extends React.Component {
   }
 
   _registerForPushNotifications() {
-    const { notification } = this.props;
-
     // Send our push token over to our backend so we can receive notifications
     // You can comment the following line out if you want to stop receiving
     // a notification every time you open the app. Check out the source
     // for this function in api/registerForPushNotificationsAsync.js
     registerForPushNotificationsAsync();
 
-    // If we started the app from a push notification, handle it right away
-    notification && this._handleNotification(notification);
-
-    // Handle notifications that come in while the app is open
-    return DeviceEventEmitter.addListener('Exponent.notification', this._handleNotification);
+    // Watch for incoming notifications
+    Notifications.addListener(this._handleNotification);
   }
 
   _handleNotification = ({origin, data}) => {
     this.props.navigator.showLocalAlert(
-      `Push notification ${origin} with data: ${data}`,
+      `Push notification ${origin} with data: ${JSON.stringify(data)}`,
       Alerts.notice
     );
   }
