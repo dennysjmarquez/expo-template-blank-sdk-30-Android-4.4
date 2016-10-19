@@ -39,7 +39,10 @@ class AppContainer extends React.Component {
         ],
       });
     } catch(e) {
-      console.warn(`There was an error caching assets (see: main.js), perhaps due to a network timeout, so we skipped caching. Reload the app to try again.`);
+      console.warn(
+        'There was an error caching assets (see: main.js), perhaps due to a ' +
+        'network timeout, so we skipped caching. Reload the app to try again.'
+      );
     } finally {
       this.setState({appIsReady: true});
     }
@@ -58,7 +61,9 @@ class AppContainer extends React.Component {
         </View>
       );
     } else {
-      return <Exponent.Components.AppLoading />;
+      return (
+        <Exponent.Components.AppLoading />
+      );
     }
   }
 }

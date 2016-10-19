@@ -42,7 +42,9 @@ export default class HomeScreen extends React.Component {
             </Text>
 
             <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-              <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
+              <MonoText style={styles.codeHighlightText}>
+                screens/HomeScreen.js
+              </MonoText>
             </View>
 
             <Text style={styles.getStartedText}>
@@ -65,7 +67,9 @@ export default class HomeScreen extends React.Component {
           </Text>
 
           <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-            <MonoText style={styles.codeHighlightText}>navigation/RootNavigation.js</MonoText>
+            <MonoText style={styles.codeHighlightText}>
+              navigation/RootNavigation.js
+            </MonoText>
           </View>
         </View>
       </View>

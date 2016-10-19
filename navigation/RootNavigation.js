@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  DeviceEventEmitter,
   StyleSheet,
   View,
 } from 'react-native';
