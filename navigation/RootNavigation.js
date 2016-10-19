@@ -74,7 +74,7 @@ export default class RootNavigation extends React.Component {
     registerForPushNotificationsAsync();
 
     // Watch for incoming notifications
-    Notifications.addListener(this._handleNotification);
+    this._notificationSubscription = Notifications.addListener(this._handleNotification);
   }
 
   _handleNotification = ({origin, data}) => {
