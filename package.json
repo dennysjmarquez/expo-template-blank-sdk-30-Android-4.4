@@ -1,10 +1,15 @@
 {
   "name": "MyNewProject",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "",
   "author": "",
-  "private": true,
   "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "jest-exponent"
+  },
   "dependencies": {
     "@exponent/ex-navigation": "^1.6.0",
     "@exponent/samples": "^1.0.2",
@@ -12,5 +17,8 @@
     "exponent": "^10.0.0",
     "react": "~15.3.2",
     "react-native": "github:exponentjs/react-native#sdk-10.1.2"
+  },
+  "devDependencies": {
+    "jest-exponent": "0.1.0"
   }
 }
