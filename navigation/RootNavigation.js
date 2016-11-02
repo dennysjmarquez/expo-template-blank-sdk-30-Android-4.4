@@ -17,7 +17,6 @@ import {
 
 import Alerts from '../constants/Alerts';
 import Colors from '../constants/Colors';
-import Router from '../navigation/Router';
 import registerForPushNotificationsAsync from '../api/registerForPushNotificationsAsync';
 
 export default class RootNavigation extends React.Component {
@@ -37,19 +36,19 @@ export default class RootNavigation extends React.Component {
         <TabNavigationItem
           id="home"
           renderIcon={isSelected => this._renderIcon('home', isSelected)}>
-          <StackNavigation initialRoute={Router.getRoute('home')} />
+          <StackNavigation initialRoute="home" />
         </TabNavigationItem>
 
         <TabNavigationItem
           id="links"
           renderIcon={isSelected => this._renderIcon('book', isSelected)}>
-          <StackNavigation initialRoute={Router.getRoute('links')} />
+          <StackNavigation initialRoute="links" />
         </TabNavigationItem>
 
         <TabNavigationItem
           id="settings"
           renderIcon={isSelected => this._renderIcon('cog', isSelected)}>
-          <StackNavigation initialRoute={Router.getRoute('settings')} />
+          <StackNavigation initialRoute="settings" />
         </TabNavigationItem>
       </TabNavigation>
     );

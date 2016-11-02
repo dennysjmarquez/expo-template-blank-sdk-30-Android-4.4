@@ -1,4 +1,7 @@
 import {
+  Image,
+} from 'react-native';
+import {
   Asset,
   Font,
 } from 'exponent';
@@ -11,7 +14,13 @@ export default function cacheAssetsAsync({images = [], fonts = []}) {
 }
 
 function cacheImages(images) {
-  return images.map(image => Asset.fromModule(image).downloadAsync());
+  return images.map(image => {
+    if (typeof image === 'string') {
+      return Image.prefetch(image);
+    } else {
+      return Exponent.Asset.fromModule(image).downloadAsync();
+    }
+  });
 }
 
 function cacheFonts(fonts) {
