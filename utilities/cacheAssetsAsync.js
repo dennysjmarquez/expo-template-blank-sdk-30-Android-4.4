@@ -18,7 +18,7 @@ function cacheImages(images) {
     if (typeof image === 'string') {
       return Image.prefetch(image);
     } else {
-      return Exponent.Asset.fromModule(image).downloadAsync();
+      return Asset.fromModule(image).downloadAsync();
     }
   });
 }

@@ -2,7 +2,7 @@
   "name": "My New Project",
   "description": "No description",
   "slug": "my-new-project",
-  "sdkVersion": "10.0.0",
+  "sdkVersion": "11.0.0",
   "version": "1.0.0",
   "orientation": "portrait",
   "primaryColor": "#cccccc",
