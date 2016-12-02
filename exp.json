@@ -17,5 +17,8 @@
   },
   "packagerOpts": {
     "assetExts": ["ttf"]
+  },
+  "ios": {
+    "supportsTablet": true
   }
 }
