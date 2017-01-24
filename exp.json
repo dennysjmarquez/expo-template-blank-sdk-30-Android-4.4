@@ -7,13 +7,13 @@
   "version": "1.0.0",
   "orientation": "portrait",
   "primaryColor": "#cccccc",
-  "iconUrl": "https://s3.amazonaws.com/exp-brand-assets/ExponentEmptyManifest_192.png",
+  "icon": "./assets/icons/app-icon.png",
   "notification": {
-    "iconUrl": "https://s3.amazonaws.com/exp-us-standard/placeholder-push-icon-blue-circle.png",
+    "icon": "./assets/icons/notification-icon.png",
     "color": "#000000"
   },
   "loading": {
-    "iconUrl": "https://s3.amazonaws.com/exp-brand-assets/ExponentEmptyManifest_192.png",
+    "icon": "./assets/icons/loading-icon.png",
     "hideExponentText": false
   },
   "packagerOpts": {
