@@ -14,11 +14,11 @@
     "@exponent/ex-navigation": "~2.7.0",
     "@exponent/samples": "~1.0.2",
     "@exponent/vector-icons": "~4.0.0",
-    "exponent": "~13.1.0",
-    "react": "~15.4.1",
-    "react-native": "git+https://github.com/exponentjs/react-native#sdk-13.0.1"
+    "exponent": "^13.1.0",
+    "react": "~15.4.0",
+    "react-native": "https://github.com/exponent/react-native/archive/sdk-13.0.1.tar.gz"
   },
   "devDependencies": {
-    "jest-exponent": "~0.1.4"
+    "jest-exponent": "~0.2.0"
   }
 }
