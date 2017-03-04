@@ -11,14 +11,14 @@
     "preset": "jest-exponent"
   },
   "dependencies": {
-    "@exponent/ex-navigation": "~2.9.1",
-    "@exponent/samples": "~1.0.2",
-    "@exponent/vector-icons": "~4.0.0",
-    "exponent": "^14.0.0",
+    "@expo/ex-navigation": "~2.9.2",
+    "@expo/samples": "~1.0.3",
+    "@expo/vector-icons": "~4.0.0",
+    "expo": "^14.0.2",
     "react": "~15.4.0",
     "react-native": "https://github.com/exponent/react-native/archive/sdk-14.0.0.tar.gz"
   },
   "devDependencies": {
-    "jest-exponent": "~0.2.1"
+    "jest-expo": "~0.2.1"
   }
 }

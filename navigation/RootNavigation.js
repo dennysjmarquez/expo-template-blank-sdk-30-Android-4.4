@@ -1,23 +1,17 @@
 import React from 'react';
-import {
-  StyleSheet,
-  View,
-} from 'react-native';
-import {
-  Notifications,
-} from 'exponent';
+import { StyleSheet, View } from 'react-native';
+import { Notifications } from 'expo';
 import {
   StackNavigation,
   TabNavigation,
   TabNavigationItem,
-} from '@exponent/ex-navigation';
-import {
-  FontAwesome,
-} from '@exponent/vector-icons';
+} from '@expo/ex-navigation';
+import { FontAwesome } from '@expo/vector-icons';
 
 import Alerts from '../constants/Alerts';
 import Colors from '../constants/Colors';
-import registerForPushNotificationsAsync from '../api/registerForPushNotificationsAsync';
+import registerForPushNotificationsAsync
+  from '../api/registerForPushNotificationsAsync';
 
 export default class RootNavigation extends React.Component {
   componentDidMount() {
@@ -30,9 +24,7 @@ export default class RootNavigation extends React.Component {
 
   render() {
     return (
-      <TabNavigation
-        tabBarHeight={56}
-        initialTab="home">
+      <TabNavigation tabBarHeight={56} initialTab="home">
         <TabNavigationItem
           id="home"
           renderIcon={isSelected => this._renderIcon('home', isSelected)}>
@@ -72,15 +64,17 @@ export default class RootNavigation extends React.Component {
     registerForPushNotificationsAsync();
 
     // Watch for incoming notifications
-    this._notificationSubscription = Notifications.addListener(this._handleNotification);
+    this._notificationSubscription = Notifications.addListener(
+      this._handleNotification
+    );
   }
 
-  _handleNotification = ({origin, data}) => {
+  _handleNotification = ({ origin, data }) => {
     this.props.navigator.showLocalAlert(
       `Push notification ${origin} with data: ${JSON.stringify(data)}`,
       Alerts.notice
     );
-  }
+  };
 }
 
 const styles = StyleSheet.create({

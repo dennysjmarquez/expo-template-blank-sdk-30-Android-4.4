@@ -1,16 +1,8 @@
-import {
-  Image,
-} from 'react-native';
-import {
-  Asset,
-  Font,
-} from 'exponent';
+import { Image } from 'react-native';
+import { Asset, Font } from 'expo';
 
-export default function cacheAssetsAsync({images = [], fonts = []}) {
-  return Promise.all([
-    ...cacheImages(images),
-    ...cacheFonts(fonts),
-  ]);
+export default function cacheAssetsAsync({ images = [], fonts = [] }) {
+  return Promise.all([...cacheImages(images), ...cacheFonts(fonts)]);
 }
 
 function cacheImages(images) {

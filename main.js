@@ -1,4 +1,4 @@
-import Exponent from 'exponent';
+import Expo from 'expo';
 import React from 'react';
 import {
   AppRegistry,
@@ -7,13 +7,8 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-import {
-  NavigationProvider,
-  StackNavigation,
-} from '@exponent/ex-navigation';
-import {
-  FontAwesome,
-} from '@exponent/vector-icons';
+import { NavigationProvider, StackNavigation } from '@expo/ex-navigation';
+import { FontAwesome } from '@expo/vector-icons';
 
 import Router from './navigation/Router';
 import cacheAssetsAsync from './utilities/cacheAssetsAsync';
@@ -21,7 +16,7 @@ import cacheAssetsAsync from './utilities/cacheAssetsAsync';
 class AppContainer extends React.Component {
   state = {
     appIsReady: false,
-  }
+  };
 
   componentWillMount() {
     this._loadAssetsAsync();
@@ -30,22 +25,20 @@ class AppContainer extends React.Component {
   async _loadAssetsAsync() {
     try {
       await cacheAssetsAsync({
-        images: [
-          require('./assets/images/exponent-wordmark.png'),
-        ],
+        images: [require('./assets/images/expo-wordmark.png')],
         fonts: [
           FontAwesome.font,
-          {'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf')},
+          { 'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf') },
         ],
       });
-    } catch(e) {
+    } catch (e) {
       console.warn(
         'There was an error caching assets (see: main.js), perhaps due to a ' +
-        'network timeout, so we skipped caching. Reload the app to try again.'
+          'network timeout, so we skipped caching. Reload the app to try again.'
       );
       console.log(e.message);
     } finally {
-      this.setState({appIsReady: true});
+      this.setState({ appIsReady: true });
     }
   }
 
@@ -54,17 +47,19 @@ class AppContainer extends React.Component {
       return (
         <View style={styles.container}>
           <NavigationProvider router={Router}>
-            <StackNavigation id="root" initialRoute={Router.getRoute('rootNavigation')} />
+            <StackNavigation
+              id="root"
+              initialRoute={Router.getRoute('rootNavigation')}
+            />
           </NavigationProvider>
 
           {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-          {Platform.OS === 'android' && <View style={styles.statusBarUnderlay} />}
+          {Platform.OS === 'android' &&
+            <View style={styles.statusBarUnderlay} />}
         </View>
       );
     } else {
-      return (
-        <Exponent.Components.AppLoading />
-      );
+      return <Expo.Components.AppLoading />;
     }
   }
 }
@@ -80,4 +75,4 @@ const styles = StyleSheet.create({
   },
 });
 
-Exponent.registerRootComponent(AppContainer);
+Expo.registerRootComponent(AppContainer);

@@ -17,7 +17,7 @@ export default class HomeScreen extends React.Component {
     navigationBar: {
       visible: false,
     },
-  }
+  };
 
   render() {
     return (
@@ -28,11 +28,10 @@ export default class HomeScreen extends React.Component {
 
           <View style={styles.welcomeContainer}>
             <Image
-              source={require('../assets/images/exponent-wordmark.png')}
+              source={require('../assets/images/expo-wordmark.png')}
               style={styles.welcomeImage}
             />
           </View>
-
 
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
@@ -41,7 +40,11 @@ export default class HomeScreen extends React.Component {
               Get started by opening
             </Text>
 
-            <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
+            <View
+              style={[
+                styles.codeHighlightContainer,
+                styles.homeScreenFilename,
+              ]}>
               <MonoText style={styles.codeHighlightText}>
                 screens/HomeScreen.js
               </MonoText>
@@ -53,7 +56,9 @@ export default class HomeScreen extends React.Component {
           </View>
 
           <View style={styles.helpContainer}>
-            <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
+            <TouchableOpacity
+              onPress={this._handleHelpPress}
+              style={styles.helpLink}>
               <Text style={styles.helpLinkText}>
                 Help, it didn’t automatically reload!
               </Text>
@@ -66,7 +71,8 @@ export default class HomeScreen extends React.Component {
             This is a tab bar. You can edit it in:
           </Text>
 
-          <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
+          <View
+            style={[styles.codeHighlightContainer, styles.navigationFilename]}>
             <MonoText style={styles.codeHighlightText}>
               navigation/RootNavigation.js
             </MonoText>
@@ -100,12 +106,16 @@ export default class HomeScreen extends React.Component {
   }
 
   _handleLearnMorePress = () => {
-    Linking.openURL('https://docs.getexponent.com/versions/latest/guides/development-mode');
-  }
+    Linking.openURL(
+      'https://docs.expo.io/versions/latest/guides/development-mode'
+    );
+  };
 
   _handleHelpPress = () => {
-    Linking.openURL('https://docs.getexponent.com/versions/latest/guides/up-and-running.html#can-t-see-your-changes');
-  }
+    Linking.openURL(
+      'https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes'
+    );
+  };
 }
 
 const styles = StyleSheet.create({
@@ -128,9 +138,11 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   welcomeImage: {
-    width: 200,
-    height: 34.5,
+    width: 140,
+    height: 38,
+    resizeMode: 'contain',
     marginTop: 3,
+    marginLeft: -10,
   },
   getStartedContainer: {
     alignItems: 'center',
@@ -161,7 +173,7 @@ const styles = StyleSheet.create({
     ...Platform.select({
       ios: {
         shadowColor: 'black',
-        shadowOffset: {height: -3},
+        shadowOffset: { height: -3 },
         shadowOpacity: 0.1,
         shadowRadius: 3,
       },
