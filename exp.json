@@ -2,7 +2,7 @@
   "name": "My New Project",
   "description": "No description",
   "slug": "my-new-project",
-  "privacy": "public",
+  "privacy": "unlisted",
   "sdkVersion": "14.0.0",
   "version": "1.0.0",
   "orientation": "portrait",
