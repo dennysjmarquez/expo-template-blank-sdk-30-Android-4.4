@@ -3,7 +3,7 @@
   "description": "No description",
   "slug": "my-new-project",
   "privacy": "unlisted",
-  "sdkVersion": "14.0.0",
+  "sdkVersion": "15.0.0",
   "version": "1.0.0",
   "orientation": "portrait",
   "primaryColor": "#cccccc",
