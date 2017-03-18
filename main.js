@@ -1,12 +1,6 @@
 import Expo from 'expo';
 import React from 'react';
-import {
-  AppRegistry,
-  Platform,
-  StatusBar,
-  StyleSheet,
-  View,
-} from 'react-native';
+import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { NavigationProvider, StackNavigation } from '@expo/ex-navigation';
 import { FontAwesome } from '@expo/vector-icons';
 
@@ -59,7 +53,7 @@ class AppContainer extends React.Component {
         </View>
       );
     } else {
-      return <Expo.Components.AppLoading />;
+      return <Expo.AppLoading />;
     }
   }
 }
