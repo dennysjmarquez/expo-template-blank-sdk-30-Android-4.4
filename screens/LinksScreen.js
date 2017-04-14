@@ -16,8 +16,7 @@ export default class LinksScreen extends React.Component {
         contentContainerStyle={this.props.route.getContentContainerStyle()}>
 
         {/* Go ahead and delete ExpoLinksView and replace it with your
-           * content, we just wanted to provide you with some helpful links */
-        }
+           * content, we just wanted to provide you with some helpful links */}
         <ExpoLinksView />
 
       </ScrollView>
