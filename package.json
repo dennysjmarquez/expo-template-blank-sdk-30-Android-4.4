@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "author": "",
-  "main": "main.js",
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "test": "node node_modules/jest/bin/jest.js"
+    "test": "jest"
   },
   "jest": {
     "preset": "jest-expo"
@@ -13,7 +13,7 @@
   "dependencies": {
     "@expo/ex-navigation": "~3.0.0",
     "@expo/samples": "~1.0.3",
-    "expo": "17.0.0",
+    "expo": "18.0.0-alpha.1",
     "react": "16.0.0-alpha.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-17.0.0.tar.gz"
   },

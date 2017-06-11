@@ -1,13 +1,13 @@
-import Expo from 'expo';
 import React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import { AppLoading } from 'expo';
 import { NavigationProvider, StackNavigation } from '@expo/ex-navigation';
 import { FontAwesome } from '@expo/vector-icons';
 
 import Router from './navigation/Router';
 import cacheAssetsAsync from './utilities/cacheAssetsAsync';
 
-class AppContainer extends React.Component {
+export default class AppContainer extends React.Component {
   state = {
     appIsReady: false,
   };
@@ -53,7 +53,7 @@ class AppContainer extends React.Component {
         </View>
       );
     } else {
-      return <Expo.AppLoading />;
+      return <AppLoading />;
     }
   }
 }
@@ -68,5 +68,3 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.2)',
   },
 });
-
-Expo.registerRootComponent(AppContainer);
