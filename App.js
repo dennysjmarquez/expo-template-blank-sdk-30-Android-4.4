@@ -1,10 +1,9 @@
 import React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading } from 'expo';
-import { NavigationProvider, StackNavigation } from '@expo/ex-navigation';
 import { FontAwesome } from '@expo/vector-icons';
+import RootNavigation from './navigation/RootNavigation';
 
-import Router from './navigation/Router';
 import cacheAssetsAsync from './utilities/cacheAssetsAsync';
 
 export default class AppContainer extends React.Component {
@@ -40,16 +39,10 @@ export default class AppContainer extends React.Component {
     if (this.state.appIsReady) {
       return (
         <View style={styles.container}>
-          <NavigationProvider router={Router}>
-            <StackNavigation
-              id="root"
-              initialRoute={Router.getRoute('rootNavigation')}
-            />
-          </NavigationProvider>
-
           {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
           {Platform.OS === 'android' &&
             <View style={styles.statusBarUnderlay} />}
+          <RootNavigation />
         </View>
       );
     } else {

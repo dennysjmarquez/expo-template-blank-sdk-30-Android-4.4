@@ -13,10 +13,8 @@ import {
 import { MonoText } from '../components/StyledText';
 
 export default class HomeScreen extends React.Component {
-  static route = {
-    navigationBar: {
-      visible: false,
-    },
+  static navigationOptions = {
+    header: null,
   };
 
   render() {
@@ -74,7 +72,7 @@ export default class HomeScreen extends React.Component {
           <View
             style={[styles.codeHighlightContainer, styles.navigationFilename]}>
             <MonoText style={styles.codeHighlightText}>
-              navigation/RootNavigation.js
+              navigation/MainTabNavigator.js
             </MonoText>
           </View>
         </View>
