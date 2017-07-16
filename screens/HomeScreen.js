@@ -23,7 +23,6 @@ export default class HomeScreen extends React.Component {
         <ScrollView
           style={styles.container}
           contentContainerStyle={styles.contentContainer}>
-
           <View style={styles.welcomeContainer}>
             <Image
               source={require('../assets/images/expo.png')}
@@ -34,9 +33,7 @@ export default class HomeScreen extends React.Component {
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
 
-            <Text style={styles.getStartedText}>
-              Get started by opening
-            </Text>
+            <Text style={styles.getStartedText}>Get started by opening</Text>
 
             <View
               style={[
@@ -90,8 +87,8 @@ export default class HomeScreen extends React.Component {
 
       return (
         <Text style={styles.developmentModeText}>
-          Development mode is enabled, your app will run slightly slower but
-          you have access to useful development tools. {learnMoreButton}.
+          Development mode is enabled, your app will run slightly slower but you
+          have access to useful development tools. {learnMoreButton}.
         </Text>
       );
     } else {
