@@ -1,7 +1,3 @@
-/**
- * @flow
- */
-
 import React from 'react';
 import { FontAwesome } from '@expo/vector-icons';
 import { TabNavigator, TabBarBottom } from 'react-navigation';

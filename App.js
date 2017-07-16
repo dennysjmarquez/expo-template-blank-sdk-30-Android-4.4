@@ -1,42 +1,22 @@
 import React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
-import { AppLoading } from 'expo';
+import { AppLoading, Asset, Font } from 'expo';
 import { FontAwesome } from '@expo/vector-icons';
 import RootNavigation from './navigation/RootNavigation';
 
-import cacheAssetsAsync from './utilities/cacheAssetsAsync';
-
-export default class AppContainer extends React.Component {
+export default class App extends React.Component {
   state = {
-    appIsReady: false,
+    assetsAreLoaded: false,
   };
 
   componentWillMount() {
     this._loadAssetsAsync();
   }
 
-  async _loadAssetsAsync() {
-    try {
-      await cacheAssetsAsync({
-        images: [require('./assets/images/expo-wordmark.png')],
-        fonts: [
-          FontAwesome.font,
-          { 'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf') },
-        ],
-      });
-    } catch (e) {
-      console.warn(
-        'There was an error caching assets (see: main.js), perhaps due to a ' +
-          'network timeout, so we skipped caching. Reload the app to try again.'
-      );
-      console.log(e.message);
-    } finally {
-      this.setState({ appIsReady: true });
-    }
-  }
-
   render() {
-    if (this.state.appIsReady) {
+    if (!this.state.assetsAreLoaded && !this.props.skipLoadingScreen) {
+      return <AppLoading />;
+    } else {
       return (
         <View style={styles.container}>
           {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
@@ -45,8 +25,28 @@ export default class AppContainer extends React.Component {
           <RootNavigation />
         </View>
       );
-    } else {
-      return <AppLoading />;
+    }
+  }
+
+  async _loadAssetsAsync() {
+    try {
+      await Promise.all([
+        Asset.loadAsync([require('./assets/images/expo.png')]),
+        Font.loadAsync([
+          FontAwesome.font,
+          { 'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf') },
+        ]),
+      ]);
+    } catch (e) {
+      // In this case, you might want to report the error to your error
+      // reporting service, for example Sentry
+      console.warn(
+        'There was an error caching assets (see: App.js), perhaps due to a ' +
+          'network timeout, so we skipped caching. Reload the app to try again.'
+      );
+      console.log(e);
+    } finally {
+      this.setState({ assetsAreLoaded: true });
     }
   }
 }

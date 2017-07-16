@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Image,
-  Linking,
   Platform,
   ScrollView,
   StyleSheet,
@@ -9,6 +8,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 
@@ -26,7 +26,7 @@ export default class HomeScreen extends React.Component {
 
           <View style={styles.welcomeContainer}>
             <Image
-              source={require('../assets/images/expo-wordmark.png')}
+              source={require('../assets/images/expo.png')}
               style={styles.welcomeImage}
             />
           </View>
@@ -104,13 +104,13 @@ export default class HomeScreen extends React.Component {
   }
 
   _handleLearnMorePress = () => {
-    Linking.openURL(
+    WebBrowser.openBrowserAsync(
       'https://docs.expo.io/versions/latest/guides/development-mode'
     );
   };
 
   _handleHelpPress = () => {
-    Linking.openURL(
+    WebBrowser.openBrowserAsync(
       'https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes'
     );
   };
