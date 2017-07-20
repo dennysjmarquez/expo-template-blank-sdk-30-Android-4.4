@@ -1,5 +1,6 @@
 import React from 'react';
-import { FontAwesome } from '@expo/vector-icons';
+import { Platform } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { TabNavigator, TabBarBottom } from 'react-navigation';
 
 import Colors from '../constants/Colors';
@@ -22,24 +23,30 @@ export default TabNavigator(
   },
   {
     navigationOptions: ({ navigation }) => ({
-      // Set the tab bar icon
       tabBarIcon: ({ focused }) => {
         const { routeName } = navigation.state;
         let iconName;
         switch (routeName) {
           case 'Home':
-            iconName = 'home';
+            iconName = Platform.OS === 'ios'
+              ? `ios-chatbubbles${focused ? '' : '-outline'}`
+              : 'md-chatbubbles';
             break;
           case 'Links':
-            iconName = 'book';
+            iconName = Platform.OS === 'ios'
+              ? `ios-link${focused ? '' : '-outline'}`
+              : 'md-link';
             break;
           case 'Settings':
-            iconName = 'cog';
+            iconName = Platform.OS === 'ios'
+              ? `ios-options${focused ? '' : '-outline'}`
+              : 'md-options';
         }
         return (
-          <FontAwesome
+          <Ionicons
             name={iconName}
-            size={32}
+            size={28}
+            style={{ marginBottom: -3 }}
             color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
           />
         );
@@ -50,9 +57,5 @@ export default TabNavigator(
     tabBarPosition: 'bottom',
     // Disable animation so that iOS/Android have same behaviors
     animationEnabled: false,
-    // Don't show the labels
-    tabBarOptions: {
-      showLabel: false,
-    },
   }
 );

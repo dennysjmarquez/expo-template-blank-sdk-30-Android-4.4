@@ -25,7 +25,11 @@ export default class HomeScreen extends React.Component {
           contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
             <Image
-              source={require('../assets/images/expo.png')}
+              source={
+                __DEV__
+                  ? require('../assets/images/robot-dev.png')
+                  : require('../assets/images/robot-prod.png')
+              }
               style={styles.welcomeImage}
             />
           </View>
@@ -125,7 +129,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   contentContainer: {
-    paddingTop: 80,
+    paddingTop: 30,
   },
   welcomeContainer: {
     alignItems: 'center',
@@ -133,8 +137,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   welcomeImage: {
-    width: 140,
-    height: 38,
+    width: 100,
+    height: 80,
     resizeMode: 'contain',
     marginTop: 3,
     marginLeft: -10,
