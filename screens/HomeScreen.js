@@ -91,8 +91,8 @@ export default class HomeScreen extends React.Component {
 
       return (
         <Text style={styles.developmentModeText}>
-          Development mode is enabled, your app will run slightly slower but you
-          have access to useful development tools. {learnMoreButton}.
+          Development mode is enabled, your app will be slower but you can use
+          useful development tools. {learnMoreButton}
         </Text>
       );
     } else {
@@ -125,7 +125,8 @@ const styles = StyleSheet.create({
   developmentModeText: {
     marginBottom: 20,
     color: 'rgba(0,0,0,0.4)',
-    fontSize: 15,
+    fontSize: 14,
+    lineHeight: 19,
     textAlign: 'center',
   },
   contentContainer: {
@@ -161,7 +162,7 @@ const styles = StyleSheet.create({
   getStartedText: {
     fontSize: 17,
     color: 'rgba(96,100,109, 1)',
-    lineHeight: 23,
+    lineHeight: 24,
     textAlign: 'center',
   },
   tabBarInfoContainer: {

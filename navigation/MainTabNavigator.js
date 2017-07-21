@@ -29,8 +29,8 @@ export default TabNavigator(
         switch (routeName) {
           case 'Home':
             iconName = Platform.OS === 'ios'
-              ? `ios-chatbubbles${focused ? '' : '-outline'}`
-              : 'md-chatbubbles';
+              ? `ios-information-circle${focused ? '' : '-outline'}`
+              : 'md-information-circle';
             break;
           case 'Links':
             iconName = Platform.OS === 'ios'
@@ -52,10 +52,9 @@ export default TabNavigator(
         );
       },
     }),
-    // Put tab bar on bottom of screen on both platforms
     tabBarComponent: TabBarBottom,
     tabBarPosition: 'bottom',
-    // Disable animation so that iOS/Android have same behaviors
     animationEnabled: false,
+    swipeEnabled: false,
   }
 );
