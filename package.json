@@ -6,9 +6,7 @@
   "license": "",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "test": "node_modules/jest/bin/jest.js",
-    "lint": "node_modules/eslint/bin/eslint.js .",
-    "prettier": "node_modules/eslint/bin/eslint.js . --fix"
+    "test": "node_modules/jest/bin/jest.js"
   },
   "jest": {
     "preset": "jest-expo"
