@@ -1,7 +1,7 @@
 import { Permissions, Notifications } from 'expo';
 
 // Example server, implemented in Rails: https://git.io/vKHKv
-const PUSH_ENDPOINT = 'https://exponent-push-server.herokuapp.com/tokens';
+const PUSH_ENDPOINT = 'https://expo-push-server.herokuapp.com/tokens';
 
 export default (async function registerForPushNotificationsAsync() {
   // Android remote notification permissions are granted during the app
