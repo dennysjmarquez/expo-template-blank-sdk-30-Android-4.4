@@ -14,8 +14,7 @@
       "color": "#000000"
     },
     "loading": {
-      "icon": "./assets/icons/loading-icon.png",
-      "hideExponentText": false
+      "icon": "./assets/icons/loading-icon.png"
     },
     "packagerOpts": {
       "assetExts": ["ttf"]
