@@ -20,6 +20,7 @@
       "assetExts": ["ttf"]
     },
     "ios": {
+      "bundleIdentifier": "com.sk3vy.new-project-template",
       "supportsTablet": true
     }
   }
