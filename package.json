@@ -1,10 +1,6 @@
 {
-  "name": "MyNewTabsProject",
-  "version": "1.0.0",
-  "description": "",
-  "author": "",
-  "license": "",
   "main": "node_modules/expo/AppEntry.js",
+  "private": true,
   "scripts": {
     "test": "node ./node_modules/jest/bin/jest.js --watch"
   },
