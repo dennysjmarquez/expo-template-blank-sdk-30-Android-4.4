@@ -1,9 +1,14 @@
-import { Permissions, Notifications } from 'expo';
+import { Constants, Permissions, Notifications } from 'expo';
 
 // Example server, implemented in Rails: https://git.io/vKHKv
 const PUSH_ENDPOINT = 'https://expo-push-server.herokuapp.com/tokens';
 
 export default (async function registerForPushNotificationsAsync() {
+  // Remote notifications do not work in simulators, only on device
+  if (!Constants.isDevice) {
+    return;
+  }
+
   // Android remote notification permissions are granted during the app
   // install, so this will only ask on iOS
   let { status } = await Permissions.askAsync(Permissions.NOTIFICATIONS);
