@@ -1,10 +1,10 @@
 {
   "expo": {
     "name": "My New Project",
-    "description": "No description",
+    "description": "A very interesting project.",
     "slug": "my-new-project",
     "privacy": "public",
-    "sdkVersion": "23.0.0",
+    "sdkVersion": "24.0.0",
     "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
