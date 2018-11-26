@@ -2,12 +2,12 @@ import 'react-native';
 import React from 'react';
 import App from '../App';
 import renderer from 'react-test-renderer';
-import NavigationTestUtils from 'react-navigation/NavigationTestUtils';
+import { _TESTING_ONLY_reset_container_count } from '@react-navigation/native/src/createAppContainer';
 
 describe('App snapshot', () => {
   jest.useFakeTimers();
   beforeEach(() => {
-    NavigationTestUtils.resetInternalState();
+    _TESTING_ONLY_reset_container_count();
   });
 
   it('renders the loading screen', async () => {
