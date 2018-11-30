@@ -1,7 +1,8 @@
 {
-  "name": "my-new-project",
+  "name": "expo-template-tabs",
+  "description": "The Tab Navigation project template includes several example screens.",
+  "version": "0.0.2",
   "main": "node_modules/expo/AppEntry.js",
-  "private": true,
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",

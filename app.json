@@ -1,8 +1,7 @@
 {
   "expo": {
-    "name": "My New Project",
-    "description": "A very interesting project.",
-    "slug": "my-new-project",
+    "name": "Tab Navigation Template",
+    "slug": "expo-template-tabs",
     "privacy": "public",
     "sdkVersion": "31.0.0",
     "platforms": ["ios", "android"],
